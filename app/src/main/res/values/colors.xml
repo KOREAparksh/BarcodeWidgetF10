@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Custom-->
+    <color name="colorMainSkyBlue" >#7987a1</color>
+    <color name="colorMainButtonPressFalse" >#4c5566</color>
+    <color name="colorMainButtonPressTrue" >#3C4351</color>
+    <color name="navigationBarColor" >#7987a1</color>
+    <color name="colorPartiallyTransparent">#99000000</color>
 </resources>
