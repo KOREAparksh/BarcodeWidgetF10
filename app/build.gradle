@@ -7,6 +7,10 @@ android {
     namespace 'com.f10.amatta'
     compileSdk 32
 
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.f10.amatta"
         minSdk 26
