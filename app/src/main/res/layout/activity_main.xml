@@ -63,7 +63,7 @@
         android:id="@+id/button_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/cardview_dark_background"
+        android:background="@android:color/transparent"
         app:layout_constraintWidth_percent="0.70"
         app:layout_constraintDimensionRatio="1"
         android:orientation="horizontal"
@@ -74,8 +74,11 @@
         app:layout_constraintRight_toRightOf="parent"
         >
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegisterCamera"
+            android:text="@string/registerCamera"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -84,8 +87,11 @@
             android:insetTop="0dp"
             android:insetBottom="0dp"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegisterAlbum"
+            android:text="@string/registerAlbum"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -94,8 +100,11 @@
             android:insetTop="0dp"
             android:insetBottom="0dp"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegisterManual"
+            android:text="@string/registerManual"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -104,8 +113,11 @@
             android:insetTop="0dp"
             android:insetBottom="0dp"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonNotiSetting"
+            android:text="@string/settingNotification"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
