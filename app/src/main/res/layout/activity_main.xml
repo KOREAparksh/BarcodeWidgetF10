@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorMainSkyBlue"
     tools:context=".view.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/helpButton"
+        android:layout_width="@dimen/top_icon_size"
+        android:layout_height="@dimen/top_icon_size"
+        android:layout_margin="@dimen/main_body_margin"
+        android:src="@drawable/exclamation_icon"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="@dimen/top_icon_size"
+        android:layout_height="@dimen/top_icon_size"
+        android:layout_margin="@dimen/main_body_margin"
+        android:src="@drawable/help_icon"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/halfLine"
+        app:layout_constraintHeight_percent="0.30"
+        app:layout_constraintVertical_bias="0.65">
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/view_pager_Indicator"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:clipChildren="false"/>
+
+    </LinearLayout>
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/halfLine"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintGuide_percent="0.50"/>
+
+    <GridLayout
+        android:id="@+id/button_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintWidth_percent="0.70"
+        app:layout_constraintDimensionRatio="1"
+        android:orientation="horizontal"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintTop_toTopOf="@id/halfLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterCamera"
+            android:text="@string/registerCamera"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterAlbum"
+            android:text="@string/registerAlbum"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterManual"
+            android:text="@string/registerManual"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNotiSetting"
+            android:text="@string/settingNotification"
+            android:background="@drawable/register_button_drawable"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            />
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top_icon_size">42dp</dimen>
+    <dimen name="main_body_margin">8dp</dimen>
+    <dimen name="code_card_radius">15dp</dimen>
+    <dimen name="code_card_name_size">18dp</dimen>
+    <dimen name="code_card_code_size">12dp</dimen>
+    <dimen name="code_card_padding">15dp</dimen>
+    <dimen name="viewpager_next_item_visible">26dp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>
+</resources>
