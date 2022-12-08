@@ -3,6 +3,7 @@ package com.f10.amatta.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.f10.amatta.R
 import com.f10.amatta.adapter.ViewPagerAdapter
@@ -13,7 +14,7 @@ import kotlin.math.abs
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var cardList: ArrayList<String> = arrayListOf("123", "222", "333")
+    private var viewPager: ArrayList<String> = arrayListOf("123", "222", "333")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +23,17 @@ class MainActivity : AppCompatActivity() {
         setViewPager();
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
     private fun setViewPager(){
         linkAdapter()
         setViewPagerPreview()
+        setViewPagerOverScrollMode()
     }
 
     private fun linkAdapter() {
-        binding.cardList.adapter = ViewPagerAdapter(this.cardList)
-        binding.cardList.apply { offscreenPageLimit = 3 }
+        binding.viewPager.adapter = ViewPagerAdapter(this.viewPager)
+        binding.viewPager.apply { offscreenPageLimit = 3 }
     }
 
     private fun setViewPagerPreview() {
@@ -42,11 +46,15 @@ class MainActivity : AppCompatActivity() {
             page.scaleY = 1 - (0.25f * abs(position))
             page.alpha = 0.25f + (1 - abs(position))
         }
-        binding.cardList.setPageTransformer(pageTransformer)
+        binding.viewPager.setPageTransformer(pageTransformer)
         val itemDecoration = HorizontalMarginItemDecoration(
             binding.root.context,
             R.dimen.viewpager_current_item_horizontal_margin
         )
-        binding.cardList.addItemDecoration(itemDecoration)
+        binding.viewPager.addItemDecoration(itemDecoration)
+    }
+
+    private fun setViewPagerOverScrollMode(){
+        binding.viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
     }
 }
