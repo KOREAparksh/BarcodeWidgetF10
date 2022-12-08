@@ -2,12 +2,36 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/code_card_shape"
+    android:paddingTop="@dimen/code_card_padding">
 
     <TextView
-        android:id="@+id/test_text"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minLines="1"
+        android:textSize="@dimen/code_card_name_size"
+        android:ellipsize="start"
+        android:textColor="@android:color/black"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        android:text="HI"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minLines="1"
+        android:ellipsize="start"
         android:text="HI"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
