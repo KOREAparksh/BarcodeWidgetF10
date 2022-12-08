@@ -37,8 +37,8 @@
         app:layout_constraintHeight_percent="0.30"
         app:layout_constraintVertical_bias="0.65">
 
-        <me.relex.circleindicator.CircleIndicator
-            android:id="@+id/cardListIndicator"
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/view_pager_Indicator"
             android:layout_width="match_parent"
             android:layout_height="35dp"/>
 

@@ -14,13 +14,15 @@ import kotlin.math.abs
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var viewPager: ArrayList<String> = arrayListOf("123", "222", "333")
+    private var dataList: ArrayList<String> = arrayListOf("123", "222", "333")
+    private val viewPagerAdapter: ViewPagerAdapter = ViewPagerAdapter(this.dataList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.binding = ActivityMainBinding.inflate(layoutInflater);
         setContentView(binding.root)
         setViewPager();
+        setIndicator();
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun linkAdapter() {
-        binding.viewPager.adapter = ViewPagerAdapter(this.viewPager)
+        binding.viewPager.adapter = viewPagerAdapter
         binding.viewPager.apply { offscreenPageLimit = 3 }
     }
 
@@ -56,5 +58,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setViewPagerOverScrollMode(){
         binding.viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+    }
+
+    private fun setIndicator() {
+        binding.viewPagerIndicator.setViewPager(binding.viewPager)
+        viewPagerAdapter.registerAdapterDataObserver(binding.viewPagerIndicator.adapterDataObserver)
     }
 }
